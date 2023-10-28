@@ -1,6 +1,10 @@
-package org.example;
+package org.example.decorator;
 
 import java.awt.Color;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.function.Function;
 
@@ -24,9 +28,9 @@ public class Camera {
 
 
 class Main {
-    public static void main(String[] args) {
-//        printShot(new Camera(Color::darker));
-//        printShot(new Camera(Color::brighter));
+    public static void main(String[] args) throws FileNotFoundException {
+        OutputStreamWriter fw = new OutputStreamWriter(new FileOutputStream(Path.of("123").toFile()));
+
         printShot(new Camera(Color::brighter));
     }
 
